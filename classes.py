@@ -17,7 +17,17 @@ class Genre:
 
 
 class Author:
-    pass
+    def __init__(self, author_name=None, author_age=None, author_email=None):
+        self.name = None
+        self.age = None
+        self.email = None
+        if author_name is not None:
+            self.name = author_name
+        if author_age is not None:
+            self.age = author_age
+        if author_email is not None:
+            self.email = author_email
+
 
 
 class Book:
