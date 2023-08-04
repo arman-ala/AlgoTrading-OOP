@@ -1,6 +1,8 @@
 # Arman Ala
 # 5 Aug, 2023
 # Private Library Management Classes
+import re
+
 
 class Genre:
     def __init__(self, *args):
@@ -25,9 +27,16 @@ class Author:
             self.name = author_name
         if author_age is not None:
             self.age = author_age
-        if author_email is not None:
+        if author_email is not None and self.check_email:
             self.email = author_email
 
+
+    def check_email(self):
+        pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' 
+        if re.match(pattern, self.email):
+            return True
+        else:
+            return False
 
 
 class Book:
