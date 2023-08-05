@@ -27,16 +27,12 @@ class Author:
             self.name = author_name
         if author_age is not None:
             self.age = author_age
-        if author_email is not None and self.check_email:
+        if author_email is not None:
             self.email = author_email
 
 
-    def check_email(self):
-        pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' 
-        if re.match(pattern, self.email):
-            return True
-        else:
-            return False
+    def __str__(self):
+        return f"{self.name} - {self.age} - {self.email}"
 
 
 class Book:
