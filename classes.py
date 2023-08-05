@@ -5,6 +5,21 @@ genres = []
 authors = []
 books = []
 
+def add_genre(genre):
+    if genre is not None:
+        genres.append(genre)
+
+
+def add_author(author_name):
+    if author_name is not None:
+        authors.append(author_name)
+
+
+def add_book(book):
+    if book is not None:
+        books.append(book)
+
+
 class Genre:
     def __init__(self, genre_name=None):
         self.genre = None
@@ -18,7 +33,7 @@ class Genre:
                 if genre_name == genre.genre:
                     exists = True
             if exists == False:
-                genres.append(self)
+                add_genre(self)
     
     
     def __str__(self):
@@ -48,7 +63,7 @@ class Author:
             if author_name == author.name:
                 exists = True
         if exists == False:
-            authors.append(self)
+            add_author(self)
     
     
     def __str__(self):
@@ -74,19 +89,6 @@ class Book:
             if book_title == book.title:
                 exists = True
         if exists == False:
-            books.append(self)
+            add_book(self)
 
 
-def add_genre(genre):
-    if genre is not None:
-        genres.append(genre)
-
-
-def add_author(author_name):
-    if author_name is not None:
-        authors.append(author_name)
-
-
-def add_book(book):
-    if book is not None:
-        books.append(book)
